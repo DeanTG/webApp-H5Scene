@@ -48,9 +48,15 @@
             <div class="component">desc</div>
         </section>
     </div> -->
-<link rel="stylesheet" href="css/H5.css">
+
+
 <link rel="stylesheet" href="css/H5ComponentBase.css">
+<link rel="stylesheet" href="css/H5ComponentPoint.css">
+<link rel="stylesheet" href="css/H5ComponentBar.css">
+<link rel="stylesheet" href="css/H5.css">
 <script src="js/H5ComponentBase.js"></script>
+<script src="js/H5ComponentPoint.js"></script>
+<script src="js/H5ComponentBar.js"></script>
 <script src="js/H5.js"></script>
 <script>
     $(function () {
@@ -113,25 +119,53 @@
         h5
         .addPage("face", "首页")
             .addComponent("logo", {
-                text: "logo",
-                width: 400,
-                height: 100,
-                css: {
-                    backgroundColor: "red",
-                    opacity: 0
+                "type": "base",
+                "text": "logo-图文组件",
+                "width": 400,
+                "height": 100,
+                "css": {
+                    "backgroundColor": "red",
+                    "opacity": 0
                 },
-                animateIn: {
-                    opacity: 1
+                "animateIn": {
+                    "opacity": 1
                 },
-                animateOut: {
-                    opacity: 0
+                "animateOut": {
+                    "opacity": 0
                 },
-                center: true
+                "center": true
             })
-        .addPage("desc", "描述页")
-            .addComponent("slogan", {text: "口号"})
-        .addPage("bar", "图表页")
-            .addComponent("tableBar", {text: "图表展示"})
+        .addPage("point", "散点图展示")
+            .addComponent("point", {
+                "type": "point",
+                "width": 300,
+                "height": 300,
+                "data": [
+                    ["A项", 0.4, "green"],
+                    ["B项", 0.2, "yellow", 0, "-60%"],
+                    ["C项", 0.2, "red", 0, "130%"]
+                ],
+                "css": {
+                    "top": "40%"
+                },
+                "center": true
+            })
+        .addPage("bar", "柱状图展示")
+            .addComponent("bar", {
+                "type": "bar",
+                "width": 530,
+                "height": 600,
+                "data": [
+                    ["javascript", 0.6, "#ff7676"],
+                    ["nodejs", 0.3],
+                    ["vue", 0.4],
+                    ["html/css", 0.2]
+                ],
+                "css": {
+                    "top": "20%"
+                },
+                "center": true
+            })
         .loader();
 
 

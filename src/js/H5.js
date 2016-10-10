@@ -40,7 +40,12 @@ var H5 = function () {
             case "base":
                 component = new H5ComponentBase(name, cfg);
             break;
-
+            case "point":
+                component = new H5ComponentPoint(name, cfg);
+            break;
+            case "bar":
+                component = new H5ComponentBar(name, cfg);
+            break;
             default:
         }
         

@@ -21,7 +21,7 @@ var H5ComponentBase = function ( name, cfg ) {
     if( cfg.center === true ){
         component.css({
             "marginLeft": -cfg.width/4 + 'px',
-            left: "50%"
+            "left": "50%"
         });
     }
 

@@ -1,1 +1,16 @@
 /* 散点图组件样式 */
+.h5_component_point{
+
+}
+.h5_component_point .point{
+    border-radius: 50%;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+}
+.h5_component_point .pointName{
+
+}
+.h5_component_point .pointRate{
+
+}
