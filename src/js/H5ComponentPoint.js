@@ -15,7 +15,8 @@ var H5ComponentPoint = function ( name, cfg ) {
             per = (val[1]/base)*100 + "%",
             pointName = $('<div class="pointName">'+val[0]+'</div>'),
             pointRate = $('<div class="pointRate">'+(val[1])*100+'%</div>');
-        point.append(pointName).append(pointRate);
+        pointName.append(pointRate)
+        point.append(pointName);
         point.css({
             "width": per,
             "height": per,
@@ -23,7 +24,7 @@ var H5ComponentPoint = function ( name, cfg ) {
             "left": val[3] !== undefined && val[4] !== undefined ? val[3] : "initial",
             "top": val[3] !== undefined && val[4] !== undefined ? val[4] : "initial"
         });
-
+        point.css('transition','all 1s '+index*.5+'s')
         component.append(point);
     }); 
 

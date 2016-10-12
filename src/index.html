@@ -9,28 +9,6 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="address=no" />
     <title>组件式开发－H5场景动画</title>
-    <link href="" rel="stylesheet">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        #page1{
-            background-color: red;
-        }
-        #page2{
-            background-color: blue;
-        }
-        #page3{
-            background-color: green;
-        }
-        .component{
-            display: none;
-        }
-        .h5_component_base{
-            transition: all 1s;
-        }
-    </style>
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
@@ -116,15 +94,54 @@
         //$('#page1').append(h5);
 
         var h5 = new H5();
+        h5.whenAddPage = function () {
+            this.addComponent("footer", {
+                "bg": "./images/footer.png",
+                "css": {
+                    "width": "100%",
+                    "height": 20,
+                    "bottom": -20,
+                    "zIndex": 999,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "bottom": 0,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "bottom": -20,
+                    "opacity": 0
+                },
+                "delay": 1000
+            });
+        }
         h5
-        .addPage("face", "首页")
+        .addPage("face")
             .addComponent("logo", {
                 "type": "base",
-                "text": "logo-图文组件",
-                "width": 400,
-                "height": 100,
+                "width": 395,
+                "height": 130,
+                "bg": "./images/face_logo.png",
                 "css": {
-                    "backgroundColor": "red",
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "top": 100,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "top": 0,
+                    "opacity": 0
+                },
+                "center": true
+            })
+            .addComponent("slogan", {
+                "type": "base",
+                "width": 365,
+                "height": 99,
+                "bg": "./images/face_slogan.png",
+                "css": {
+                    "top": 180,
                     "opacity": 0
                 },
                 "animateIn": {
@@ -133,24 +150,71 @@
                 "animateOut": {
                     "opacity": 0
                 },
+                "delay": 500,
                 "center": true
             })
-        .addPage("point", "散点图展示")
+            .addComponent("face_leftImg", {
+                "type": "base",
+                "width": 370,
+                "height": 493,
+                "bg": "./images/face_img_left.png",
+                "css": {
+                    "left": -50,
+                    "bottom": -50,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "left": 0,
+                    "bottom": 0,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "left": -50,
+                    "bottom": -50,
+                    "opacity": 0
+                },
+                "delay": 1000
+            })
+            .addComponent("face_rightImg", {
+                "type": "base",
+                "width": 276,
+                "height": 449,
+                "bg": "./images/face_img_right.png",
+                "css": {
+                    "right": -50,
+                    "bottom": -50,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "right": 0,
+                    "bottom": 0,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "right": -50,
+                    "bottom": -50,
+                    "opacity": 0
+                },
+                "delay": 1000
+            })
+        .addPage("point")
+            .addComponent("title",{"text": "散点图展示"})
             .addComponent("point", {
                 "type": "point",
                 "width": 300,
                 "height": 300,
                 "data": [
                     ["A项", 0.4, "green"],
-                    ["B项", 0.2, "yellow", 0, "-60%"],
-                    ["C项", 0.2, "red", 0, "130%"]
+                    ["B项", 0.3, "blue", "-40%", "-80%"],
+                    ["C项", 0.2, "red", "30%", "120%"]
                 ],
                 "css": {
-                    "top": "40%"
+                    "top": "50%"
                 },
                 "center": true
             })
-        .addPage("bar", "柱状图展示")
+        .addPage("bar")
+            .addComponent("title",{"text": "柱状图展示"})
             .addComponent("bar", {
                 "type": "bar",
                 "width": 530,
@@ -162,12 +226,90 @@
                     ["html/css", 0.2]
                 ],
                 "css": {
-                    "top": "20%"
+                    "top": "30%"
                 },
                 "center": true
             })
+        .addPage("tail")
+            .addComponent("logo", {
+                "type": "base",
+                "width": 359,
+                "height": 129,
+                "bg": "./images/tail_logo.png",
+                "css": {
+                    "top": 180,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "top": 210,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "top": 180,
+                    "opacity": 0
+                },
+                "center": true
+            })
+            .addComponent("slogan", {
+                "type": "base",
+                "width": 314,
+                "height": 46,
+                "bg": "./images/tail_slogan.png",
+                "css": {
+                    "top": 280,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "left": "50%",
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "left": "0%",
+                    "opacity": 0
+                },
+                "delay": 500,
+                "center": true
+            })
+            .addComponent("share", {
+                "type": "base",
+                "width": 128,
+                "height": 120,
+                "bg": "./images/tail_share.png",
+                "css": {
+                    "top": 30,
+                    "right": 30,
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "top": 10,
+                    "right": 10,
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "top": 30,
+                    "right": 30,
+                    "opacity": 0
+                },
+                "delay": 1000
+            })
+            .addComponent("back", {
+                "type": "base",
+                "width": 52,
+                "height": 50,
+                "bg": "./images/tail_back.png",
+                "css": {
+                    "opacity": 0
+                },
+                "animateIn": {
+                    "opacity": 1
+                },
+                "animateOut": {
+                    "opacity": 0
+                },
+                "delay": 1500,
+                "center": true
+            })
         .loader();
-
 
     })
 </script>

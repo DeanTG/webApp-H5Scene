@@ -7,10 +7,18 @@
     position: absolute;
     color: #fff;
     text-align: center;
+    opacity: 0;
+}
+.h5_component_point_load .point{
+    opacity: 1;
 }
 .h5_component_point .pointName{
-
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
 }
 .h5_component_point .pointRate{
-
+    font-size: 14px;
 }

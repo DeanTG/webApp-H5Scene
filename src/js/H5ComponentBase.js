@@ -16,8 +16,8 @@ var H5ComponentBase = function ( name, cfg ) {
     cfg.text && component.text(cfg.text);
     cfg.width && component.width(cfg.width/2);
     cfg.height && component.height(cfg.height/2);
-    cfg.css && component.css(cfg.css);
     cfg.bg && component.css("backgroundImage", "url("+cfg.bg+")");
+    cfg.css && component.css(cfg.css);
     if( cfg.center === true ){
         component.css({
             "marginLeft": -cfg.width/4 + 'px',
@@ -26,8 +26,11 @@ var H5ComponentBase = function ( name, cfg ) {
     }
 
     component.on('onLeave', function() {
-        component.addClass(cls + '_leave').removeClass(cls + '_load');
-        cfg.animateIn && component.animate( cfg.animateOut );
+        var timer = setTimeout(function(){
+            clearTimeout(timer);
+            component.addClass(cls + '_leave').removeClass(cls + '_load');
+            cfg.animateIn && component.animate( cfg.animateOut );
+        }, cfg.delay || 0);
         return false;      
     });
     component.on('onLoad', function() {

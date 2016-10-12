@@ -14,16 +14,19 @@ var H5 = function () {
     $('body').append(this.el);
 
     // 新增页
-    this.addPage = function (name, text) {
+    this.addPage = function ( className ) {
         var page = $('<div class="h5_page section"></div>');
         if (name != undefined) {
-            page.addClass('h5_page_' + name);
+            page.addClass('h5_page_' + className);
         }
-        if (text != undefined) {
-            page.text(text);
-        }
+        // if (text != undefined) {
+        //     page.text(text);
+        // }
         this.el.append(page);
         this.page.push(page);//js push方法后原来的jq对象被转换
+        if (typeof this.whenAddPage === 'function') {
+            this.whenAddPage();
+        };
         return this;
     }
 
@@ -54,7 +57,7 @@ var H5 = function () {
     }
 
     // h5对象初始化呈现
-    this.loader = function () {
+    this.loader = function ( movePage ) {
         this.el.fullpage({
             onLeave: function (index, nextIndex, direction) {
                 $(this).find('.h5_component').trigger('onLeave');
@@ -65,6 +68,8 @@ var H5 = function () {
         });
         this.page[0].find('.h5_component').trigger('onLoad');
         this.el.show(); //控制资源加载完成之后展示页面
+
+        movePage ? this.el.fullpage.moveTo( movePage ) : function(){return true};
     }
 
     return this;
