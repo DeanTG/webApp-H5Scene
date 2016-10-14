@@ -12,6 +12,8 @@
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.fullPage.js"></script>
+    <link rel="stylesheet" href="css/H5_loading.css">
+    <script src="js/loading.js"></script>
 </head>
 <body>
 
@@ -26,8 +28,11 @@
             <div class="component">desc</div>
         </section>
     </div> -->
-
-
+    <div class="loading">
+        <div class="circleOut"></div>
+        <div class="circleIn"></div>
+        <div class="loadRate">0%</div>
+    </div>
 <link rel="stylesheet" href="css/H5ComponentBase.css">
 <link rel="stylesheet" href="css/H5ComponentPoint.css">
 <link rel="stylesheet" href="css/H5ComponentBar.css">
@@ -38,60 +43,62 @@
 <script src="js/H5.js"></script>
 <script>
     $(function () {
-        // var pageContainer = $('#pageContainer'),
-        //     page = $('.page'),
-        //     component = $('.component');
+        /*
+        var pageContainer = $('#pageContainer'),
+            page = $('.page'),
+            component = $('.component');
 
-        // pageContainer.fullpage({
-        //     onLeave: function (index, nextIndex, direction) {
-        //         pageContainer.find('.page').eq(index-1).trigger('onLeave');
-        //     },
-        //     afterLoad: function (anchorLink, index) {
-        //         pageContainer.find('.page').eq(index-1).trigger('onLoad');
-        //     }
-        // });
+        pageContainer.fullpage({
+            onLeave: function (index, nextIndex, direction) {
+                pageContainer.find('.page').eq(index-1).trigger('onLeave');
+            },
+            afterLoad: function (anchorLink, index) {
+                pageContainer.find('.page').eq(index-1).trigger('onLoad');
+            }
+        });
 
-        // page.on('onLeave', function() {
-        //     console.log( $(this).attr('id') + " is left" );
-        //     $(this).find('.h5_component').trigger('onLeave');            
-        // });
-        // page.on('onLoad', function() {
-        //     console.log( $(this).attr('id') + " is loading" );
-        //     $(this).find('.h5_component').trigger('onLoad'); 
-        // });
+        page.on('onLeave', function() {
+            console.log( $(this).attr('id') + " is left" );
+            $(this).find('.h5_component').trigger('onLeave');            
+        });
+        page.on('onLoad', function() {
+            console.log( $(this).attr('id') + " is loading" );
+            $(this).find('.h5_component').trigger('onLoad'); 
+        });
 
-        // component.on('onLeave', function() {
-        //     $(this).fadeOut();
-        //     return false;//阻止事件向上冒泡触发page的onleave事件，可return false 或page使用triggerhandle       
-        // });
-        // component.on('onLoad', function() {
-        //     $(this).fadeIn();
-        //     return false;  
-        // });
+        component.on('onLeave', function() {
+            $(this).fadeOut();
+            return false;//阻止事件向上冒泡触发page的onleave事件，可return false 或page使用triggerhandle       
+        });
+        component.on('onLoad', function() {
+            $(this).fadeIn();
+            return false;  
+        });
 
-        // var cfg = {
-        //     type: "base",
-        //     // text: "文本",
-        //     bg: "images/p1_people.png",
-        //     width: "514",
-        //     height: "206",
-        //     css: {
-        //         left: 50,
-        //         top: 50,
-        //         opacity: 0
-        //     },
-        //     animateIn: {
-        //         top: 50,
-        //         opacity: 1
-        //     },
-        //     animateOut: {
-        //         top: 150,
-        //         opacity: 0
-        //     },
-        //     center: true
-        // };
-        // var h5Component = new H5ComponentBase( 'myname', cfg );
-        //$('#page1').append(h5);
+        var cfg = {
+            type: "base",
+            // text: "文本",
+            bg: "images/p1_people.png",
+            width: "514",
+            height: "206",
+            css: {
+                left: 50,
+                top: 50,
+                opacity: 0
+            },
+            animateIn: {
+                top: 50,
+                opacity: 1
+            },
+            animateOut: {
+                top: 150,
+                opacity: 0
+            },
+            center: true
+        };
+        var h5Component = new H5ComponentBase( 'myname', cfg );
+        $('#page1').append(h5);
+        */
 
         var h5 = new H5();
         h5.whenAddPage = function () {
@@ -220,7 +227,7 @@
                 "width": 530,
                 "height": 600,
                 "data": [
-                    ["javascript", 0.6, "#ff7676"],
+                    ["javascript", 0.5, "#ff7676"],
                     ["nodejs", 0.3],
                     ["vue", 0.4],
                     ["html/css", 0.2]
@@ -309,7 +316,7 @@
                 "delay": 1500,
                 "center": true
             })
-        .loader();
+        .loader(["./images/footer.png", "./images/face_logo.png", "./images/tail_logo.png", "./images/tail_slogan.png", "./images/tail_share.png", "./images/tail_back.png"]);
 
     })
 </script>

@@ -57,7 +57,7 @@ var H5 = function () {
     }
 
     // h5对象初始化呈现
-    this.loader = function ( movePage ) {
+    this.loader = function ( imgs, movePage ) {
         this.el.fullpage({
             onLeave: function (index, nextIndex, direction) {
                 $(this).find('.h5_component').trigger('onLeave');
@@ -71,6 +71,6 @@ var H5 = function () {
 
         movePage ? this.el.fullpage.moveTo( movePage ) : function(){return true};
     }
-
+    this.loader = typeof loading === 'function' ? loading : this.loader;
     return this;
 }
