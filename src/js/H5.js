@@ -6,6 +6,7 @@
 *
 *
 */
+// var jdata = [] //JSON.stringify[jdata]
 var H5 = function () {
     this.id = ('h5_' + Math.random()).replace('.', '_');
     this.page = []; //用于添加创建的page页
@@ -15,6 +16,7 @@ var H5 = function () {
 
     // 新增页
     this.addPage = function ( className ) {
+        // jdata.push({isPage : true, className : className});
         var page = $('<div class="h5_page section"></div>');
         if (name != undefined) {
             page.addClass('h5_page_' + className);
@@ -32,6 +34,7 @@ var H5 = function () {
 
     // 新增组件
     this.addComponent = function (name, cfg) {
+        // jdata.push({isPage : false, name : name, cfg : cfg});
         var cfg = cfg || {};
         cfg = $.extend( {type: "base"}, cfg ); //合并cfg参数
 

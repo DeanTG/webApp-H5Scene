@@ -122,201 +122,213 @@
                 "delay": 1000
             });
         }
-        h5
-        .addPage("face")
-            .addComponent("logo", {
-                "type": "base",
-                "width": 395,
-                "height": 130,
-                "bg": "./images/face_logo.png",
-                "css": {
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "top": 100,
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "top": 0,
-                    "opacity": 0
-                },
-                "center": true
-            })
-            .addComponent("slogan", {
-                "type": "base",
-                "width": 365,
-                "height": 99,
-                "bg": "./images/face_slogan.png",
-                "css": {
-                    "top": 180,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "opacity": 0
-                },
-                "delay": 500,
-                "center": true
-            })
-            .addComponent("face_leftImg", {
-                "type": "base",
-                "width": 370,
-                "height": 493,
-                "bg": "./images/face_img_left.png",
-                "css": {
-                    "left": -50,
-                    "bottom": -50,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "left": 0,
-                    "bottom": 0,
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "left": -50,
-                    "bottom": -50,
-                    "opacity": 0
-                },
-                "delay": 1000
-            })
-            .addComponent("face_rightImg", {
-                "type": "base",
-                "width": 276,
-                "height": 449,
-                "bg": "./images/face_img_right.png",
-                "css": {
-                    "right": -50,
-                    "bottom": -50,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "right": 0,
-                    "bottom": 0,
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "right": -50,
-                    "bottom": -50,
-                    "opacity": 0
-                },
-                "delay": 1000
-            })
-        .addPage("point")
-            .addComponent("title",{"text": "散点图展示"})
-            .addComponent("point", {
-                "type": "point",
-                "width": 300,
-                "height": 300,
-                "data": [
-                    ["A项", 0.4, "green"],
-                    ["B项", 0.3, "blue", "-40%", "-80%"],
-                    ["C项", 0.2, "red", "30%", "120%"]
-                ],
-                "css": {
-                    "top": "50%"
-                },
-                "center": true
-            })
-        .addPage("bar")
-            .addComponent("title",{"text": "柱状图展示"})
-            .addComponent("bar", {
-                "type": "bar",
-                "width": 530,
-                "height": 600,
-                "data": [
-                    ["javascript", 0.5, "#ff7676"],
-                    ["nodejs", 0.3],
-                    ["vue", 0.4],
-                    ["html/css", 0.2]
-                ],
-                "css": {
-                    "top": "30%"
-                },
-                "center": true
-            })
-        .addPage("tail")
-            .addComponent("logo", {
-                "type": "base",
-                "width": 359,
-                "height": 129,
-                "bg": "./images/tail_logo.png",
-                "css": {
-                    "top": 180,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "top": 210,
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "top": 180,
-                    "opacity": 0
-                },
-                "center": true
-            })
-            .addComponent("slogan", {
-                "type": "base",
-                "width": 314,
-                "height": 46,
-                "bg": "./images/tail_slogan.png",
-                "css": {
-                    "top": 280,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "left": "50%",
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "left": "0%",
-                    "opacity": 0
-                },
-                "delay": 500,
-                "center": true
-            })
-            .addComponent("share", {
-                "type": "base",
-                "width": 128,
-                "height": 120,
-                "bg": "./images/tail_share.png",
-                "css": {
-                    "top": 30,
-                    "right": 30,
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "top": 10,
-                    "right": 10,
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "top": 30,
-                    "right": 30,
-                    "opacity": 0
-                },
-                "delay": 1000
-            })
-            .addComponent("back", {
-                "type": "base",
-                "width": 52,
-                "height": 50,
-                "bg": "./images/tail_back.png",
-                "css": {
-                    "opacity": 0
-                },
-                "animateIn": {
-                    "opacity": 1
-                },
-                "animateOut": {
-                    "opacity": 0
-                },
-                "delay": 1500,
-                "center": true
-            })
-        .loader(["./images/footer.png", "./images/face_logo.png", "./images/tail_logo.png", "./images/tail_slogan.png", "./images/tail_share.png", "./images/tail_back.png"]);
+        // h5
+        // .addPage("face")
+        //     .addComponent("logo", {
+        //         "type": "base",
+        //         "width": 395,
+        //         "height": 130,
+        //         "bg": "./images/face_logo.png",
+        //         "css": {
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "top": 100,
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "top": 0,
+        //             "opacity": 0
+        //         },
+        //         "center": true
+        //     })
+        //     .addComponent("slogan", {
+        //         "type": "base",
+        //         "width": 365,
+        //         "height": 99,
+        //         "bg": "./images/face_slogan.png",
+        //         "css": {
+        //             "top": 180,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "opacity": 0
+        //         },
+        //         "delay": 500,
+        //         "center": true
+        //     })
+        //     .addComponent("face_leftImg", {
+        //         "type": "base",
+        //         "width": 370,
+        //         "height": 493,
+        //         "bg": "./images/face_img_left.png",
+        //         "css": {
+        //             "left": -50,
+        //             "bottom": -50,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "left": 0,
+        //             "bottom": 0,
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "left": -50,
+        //             "bottom": -50,
+        //             "opacity": 0
+        //         },
+        //         "delay": 1000
+        //     })
+        //     .addComponent("face_rightImg", {
+        //         "type": "base",
+        //         "width": 276,
+        //         "height": 449,
+        //         "bg": "./images/face_img_right.png",
+        //         "css": {
+        //             "right": -50,
+        //             "bottom": -50,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "right": 0,
+        //             "bottom": 0,
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "right": -50,
+        //             "bottom": -50,
+        //             "opacity": 0
+        //         },
+        //         "delay": 1000
+        //     })
+        // .addPage("point")
+        //     .addComponent("title",{"text": "散点图展示"})
+        //     .addComponent("point", {
+        //         "type": "point",
+        //         "width": 300,
+        //         "height": 300,
+        //         "data": [
+        //             ["A项", 0.4, "green"],
+        //             ["B项", 0.3, "blue", "-40%", "-80%"],
+        //             ["C项", 0.2, "red", "30%", "120%"]
+        //         ],
+        //         "css": {
+        //             "top": "50%"
+        //         },
+        //         "center": true
+        //     })
+        // .addPage("bar")
+        //     .addComponent("title",{"text": "柱状图展示"})
+        //     .addComponent("bar", {
+        //         "type": "bar",
+        //         "width": 530,
+        //         "height": 600,
+        //         "data": [
+        //             ["javascript", 0.5, "#ff7676"],
+        //             ["nodejs", 0.3],
+        //             ["vue", 0.4],
+        //             ["html/css", 0.2]
+        //         ],
+        //         "css": {
+        //             "top": "30%"
+        //         },
+        //         "center": true
+        //     })
+        // .addPage("tail")
+        //     .addComponent("logo", {
+        //         "type": "base",
+        //         "width": 359,
+        //         "height": 129,
+        //         "bg": "./images/tail_logo.png",
+        //         "css": {
+        //             "top": 180,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "top": 210,
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "top": 180,
+        //             "opacity": 0
+        //         },
+        //         "center": true
+        //     })
+        //     .addComponent("slogan", {
+        //         "type": "base",
+        //         "width": 314,
+        //         "height": 46,
+        //         "bg": "./images/tail_slogan.png",
+        //         "css": {
+        //             "top": 280,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "left": "50%",
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "left": "0%",
+        //             "opacity": 0
+        //         },
+        //         "delay": 500,
+        //         "center": true
+        //     })
+        //     .addComponent("share", {
+        //         "type": "base",
+        //         "width": 128,
+        //         "height": 120,
+        //         "bg": "./images/tail_share.png",
+        //         "css": {
+        //             "top": 30,
+        //             "right": 30,
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "top": 10,
+        //             "right": 10,
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "top": 30,
+        //             "right": 30,
+        //             "opacity": 0
+        //         },
+        //         "delay": 1000
+        //     })
+        //     .addComponent("back", {
+        //         "type": "base",
+        //         "width": 52,
+        //         "height": 50,
+        //         "bg": "./images/tail_back.png",
+        //         "css": {
+        //             "opacity": 0
+        //         },
+        //         "animateIn": {
+        //             "opacity": 1
+        //         },
+        //         "animateOut": {
+        //             "opacity": 0
+        //         },
+        //         "delay": 1500,
+        //         "center": true
+        //     })
+        //.loader(["./images/footer.png", "./images/face_logo.png", "./images/tail_logo.png", "./images/tail_slogan.png", "./images/tail_share.png", "./images/tail_back.png"]);
+
+        $.getJSON('data.json', function(json) {
+            $.each(json, function(index, val) {
+                if (val.isPage) {
+                    h5.addPage(val.className);
+                }else{
+                    h5.addComponent(val.name, val.cfg);
+                }
+            });
+            h5.loader(["./images/footer.png", "./images/face_logo.png", "./images/tail_logo.png", "./images/tail_slogan.png", "./images/tail_share.png", "./images/tail_back.png"]);
+        });
+    
 
     })
 </script>
