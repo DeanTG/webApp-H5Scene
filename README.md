@@ -1,4 +1,5 @@
 # webApp-H5Scene
+预览：[demo地址](https://deantg.github.io/webApp-H5Scene/dist/html/index.html)  
 
 keywords: 组件式开发 fullpage.js
 
