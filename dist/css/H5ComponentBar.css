@@ -1,0 +1,51 @@
+/* 柱状组件样式 */
+.h5_component_bar{}
+.h5_component_bar .line{
+    margin: 10px 0;
+}
+.h5_component_bar .line:before,.h5_component_bar .line:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.h5_component_bar .name{
+    width: 70px;
+    float: left;
+    text-align: right;
+}
+.h5_component_bar .rate{
+    float: left;
+    height: 20px;
+    margin-left: 5px;
+    position: relative;
+}
+.h5_component_bar .per{
+    float: left;
+    margin-left: 5px;
+    opacity: 0;
+}
+.h5_component_bar .bg{
+    width: 0%;
+    height: 100%;
+    background-color: #ff6767;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.h5_component_bar_load .bg{
+    width: 100%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.h5_component_bar_leave .bg{
+    width: 0%;
+}
+.h5_component_bar_load .per{
+    opacity: 1;
+    -webkit-transition: all 1s 1s;
+    transition: all 1s 1s;
+}
+.h5_component_bar_leave .per{
+    opacity: 0;
+}
